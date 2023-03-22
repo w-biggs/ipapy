@@ -31,12 +31,16 @@ DG_TYPES = IPADescriptorGroup([
     D_TONE,
 ])
 
+# extra
+D_C_ANY = IPADescriptor([u"any"])
+
 # consonants
 D_C_VOICED = IPADescriptor([u"voiced", u"vcd"])
 D_C_VOICELESS = IPADescriptor([u"voiceless", u"tenuis", u"vls"])
 DG_C_VOICING = IPADescriptorGroup([
     D_C_VOICED,
     D_C_VOICELESS,
+    D_C_ANY,
 ])
 D_C_ALVEOLAR = IPADescriptor([u"alveolar", u"alv"])
 D_C_ALVEOLO_NASAL = IPADescriptor([u"alveolo-nasal", u"alveolar-nasal"])
@@ -49,6 +53,7 @@ D_C_LABIO_ALVEOLAR = IPADescriptor([u"labio-alveolar", u"labial-alveolar", u"lab
 D_C_LABIO_DENTAL = IPADescriptor([u"labio-dental", u"labial-dental", u"labiodental", u"lbd"])
 D_C_LABIO_PALATAL = IPADescriptor([u"labio-palatal", u"labial-palatal", u"labiopalatal"])
 D_C_LABIO_VELAR = IPADescriptor([u"labio-velar", u"labial-velar", u"labiovelar"])
+D_C_LARYNGEAL = IPADescriptor([u"laryngeal"])
 D_C_LINGUOLABIAL = IPADescriptor([u"linguolabial"])
 D_C_PALATAL = IPADescriptor([u"palatal", u"pal"])
 D_C_PALATO_ALVEOLAR = IPADescriptor([u"palato-alveolar", u"palatal-alveolar", u"palatoalveolar", u"postalveolar", u"pla"])
@@ -72,6 +77,7 @@ DG_C_PLACE = IPADescriptorGroup([
     D_C_LABIO_DENTAL,
     D_C_LABIO_PALATAL,
     D_C_LABIO_VELAR,
+    D_C_LARYNGEAL,
     D_C_LINGUOLABIAL,
     D_C_PALATAL,
     D_C_PALATO_ALVEOLAR,
@@ -83,14 +89,18 @@ DG_C_PLACE = IPADescriptorGroup([
     D_C_UVULAR,
     D_C_UVULO_PHARYNGEAL,
     D_C_VELAR,
+    D_C_ANY,
 ])
+D_C_AFFRICATE = IPADescriptor([u"affricate"])
 D_C_APPROXIMANT = IPADescriptor([u"approximant", u"apr"])
 D_C_CLICK = IPADescriptor([u"click", u"clk"])
+D_C_CONTINUANT = IPADescriptor([u"continuant"])
 D_C_EJECTIVE = IPADescriptor([u"ejective", u"ejc"])
 D_C_EJECTIVE_AFFRICATE = IPADescriptor([u"ejective-affricate"])
 D_C_EJECTIVE_FRICATIVE = IPADescriptor([u"ejective-fricative"])
 D_C_FLAP = IPADescriptor([u"flap", u"tap", u"flp"])
 D_C_IMPLOSIVE = IPADescriptor([u"implosive", u"imp"])
+D_C_GLIDE = IPADescriptor([u"glide"])
 D_C_LATERAL_AFFRICATE = IPADescriptor([u"lateral-affricate"])
 D_C_LATERAL_APPROXIMANT = IPADescriptor([u"lateral-approximant"])
 D_C_LATERAL_CLICK = IPADescriptor([u"lateral-click"])
@@ -98,20 +108,26 @@ D_C_LATERAL_EJECTIVE_AFFRICATE = IPADescriptor([u"lateral-ejective-affricate"])
 D_C_LATERAL_EJECTIVE_FRICATIVE = IPADescriptor([u"lateral-ejective-fricative"])
 D_C_LATERAL_FLAP = IPADescriptor([u"lateral-flap"])
 D_C_LATERAL_FRICATIVE = IPADescriptor([u"lateral-fricative"])
+D_C_LIQUID = IPADescriptor([u"liquid"])
 D_C_NASAL = IPADescriptor([u"nasal", u"nas"])
 D_C_NON_SIBILANT_AFFRICATE = IPADescriptor([u"non-sibilant-affricate"])
 D_C_NON_SIBILANT_FRICATIVE = IPADescriptor([u"non-sibilant-fricative"])
+D_C_OBSTRENT = IPADescriptor([u"obstruent"])
 D_C_PLOSIVE = IPADescriptor([u"plosive", u"stop", u"stp"])
 D_C_SIBILANT_AFFRICATE = IPADescriptor([u"sibilant-affricate"])
 D_C_SIBILANT_FRICATIVE = IPADescriptor([u"sibilant-fricative"])
+D_C_SONORANT = IPADescriptor([u"sonorant"])
 D_C_TRILL = IPADescriptor([u"trill", u"trl"])
 DG_C_MANNER = IPADescriptorGroup([
+    D_C_AFFRICATE,
     D_C_APPROXIMANT,
     D_C_CLICK,
+    D_C_CONTINUANT,
     D_C_EJECTIVE,
     D_C_EJECTIVE_AFFRICATE,
     D_C_EJECTIVE_FRICATIVE,
     D_C_FLAP,
+    D_C_GLIDE,
     D_C_IMPLOSIVE,
     D_C_LATERAL_AFFRICATE,
     D_C_LATERAL_APPROXIMANT,
@@ -120,13 +136,17 @@ DG_C_MANNER = IPADescriptorGroup([
     D_C_LATERAL_EJECTIVE_FRICATIVE,
     D_C_LATERAL_FLAP,
     D_C_LATERAL_FRICATIVE,
+    D_C_LIQUID,
     D_C_NASAL,
     D_C_NON_SIBILANT_AFFRICATE,
     D_C_NON_SIBILANT_FRICATIVE,
+    D_C_OBSTRENT,
     D_C_PLOSIVE,
     D_C_SIBILANT_AFFRICATE,
     D_C_SIBILANT_FRICATIVE,
+    D_C_SONORANT,
     D_C_TRILL,
+    D_C_ANY,
 ])
 DG_CONSONANTS = DG_C_VOICING + DG_C_PLACE + DG_C_MANNER
 
@@ -146,6 +166,7 @@ DG_V_HEIGHT = IPADescriptorGroup([
     D_V_OPEN_MID,
     D_V_NEAR_OPEN,
     D_V_OPEN,
+    D_C_ANY,
 ])
 D_V_FRONT = IPADescriptor([u"front", u"fnt"])
 D_V_NEAR_FRONT = IPADescriptor([u"near-front"])
@@ -158,12 +179,14 @@ DG_V_BACKNESS = IPADescriptorGroup([
     D_V_CENTER,
     D_V_NEAR_BACK,
     D_V_BACK,
+    D_C_ANY,
 ])
 D_V_ROUNDED = IPADescriptor([u"rounded", u"rnd"])
 D_V_UNROUNDED = IPADescriptor([u"unrounded", u"unr"])
 DG_V_ROUNDNESS = IPADescriptorGroup([
     D_V_ROUNDED,
     D_V_UNROUNDED,
+    D_C_ANY,
 ])
 DG_VOWELS = DG_V_HEIGHT + DG_V_BACKNESS + DG_V_ROUNDNESS
 
