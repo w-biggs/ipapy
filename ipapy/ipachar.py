@@ -92,7 +92,6 @@ DG_C_PLACE = IPADescriptorGroup([
     D_C_VELAR,
 ])
 D_C_ANYM = IPADescriptor([u"anym"])
-D_C_AFFRICATE = IPADescriptor([u"affricate"])
 D_C_APPROXIMANT = IPADescriptor([u"approximant", u"apr"])
 D_C_CLICK = IPADescriptor([u"click", u"clk"])
 D_C_CONTINUANT = IPADescriptor([u"continuant"])
@@ -121,7 +120,6 @@ D_C_SONORANT = IPADescriptor([u"sonorant"])
 D_C_TRILL = IPADescriptor([u"trill", u"trl"])
 DG_C_MANNER = IPADescriptorGroup([
     D_C_ANYM,
-    D_C_AFFRICATE,
     D_C_APPROXIMANT,
     D_C_CLICK,
     D_C_CONTINUANT,
